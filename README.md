@@ -1,69 +1,118 @@
-# Casper
+# 👻 Wraith — Ghost Theme
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
+**Wraith** is a minimal and performance-focused theme for **Ghost**, designed for technical blogging and long-form content.
 
-&nbsp;
+It is a clean, opinionated fork of the official Casper theme, adapted to fit a professional developer-oriented blog.
 
-![screenshot-desktop](https://user-images.githubusercontent.com/1418797/183329195-8e8f2ee5-a473-4694-a813-a2575491209e.png)
+---
 
-&nbsp;
+## 🎯 Project Goals
 
-# First time using a Ghost theme?
+- Minimal, readable and distraction-free layout
+- Excellent performance and accessibility
+- Clean typography for technical writing
+- Long-term maintainability (no heavy JS, no framework)
+- Full compatibility with **Ghost 5.x+**
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+This theme is primarily used on:
+➡️ **https://blog.romain-c.fr**
 
-This theme has lots of code comments to help explain what's going on just by reading the code. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://ghost.org/docs/themes/) which explains every possible Handlebars helper and template.
+---
 
-**The main files are:**
+## ✨ Features
 
-- `default.hbs` - The parent template file, which includes your global header/footer
-- `index.hbs` - The main template to generate a list of posts, usually the home page
-- `post.hbs` - The template used to render individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives, eg. "all posts tagged with `news`"
-- `author.hbs` - Used for author archives, eg. "all posts written by Jamie"
+- Based on Ghost official **Casper** theme
+- French translation
+- Responsive and mobile-first
+- Multiple feed layouts (Classic / Grid / List)
+- Light / Dark / Auto color scheme
+- Configurable typography (title & body fonts)
+- Flexible header & navigation layouts
+- Optimized image sizes and lazy loading
+- Fully compatible with Ghost Editor cards
+- GScan compliant (Ghost theme validator)
 
-One neat trick is that you can also create custom one-off templates by adding the slug of a page to a template file. For example:
+---
 
-- `page-about.hbs` - Custom template for an `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
+## 🛠️ Development Workflow
 
+### Requirements
 
-# Development
+- **Node.js** ≥ 18
+- **Yarn**
+- **Ghost CLI** (optional, for local testing)
 
-Casper styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+### Install dependencies
 
 ```bash
-# install dependencies
 yarn install
+```
 
-# run development server
+### Start development mode
+
+```bash
 yarn dev
 ```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+This will:
+- Watch CSS and JS assets
+- Rebuild files on change
+- Enable LiveReload
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+### Build assets
 
 ```bash
-# create .zip file
+yarn build
+```
+
+### Run theme validation
+
+```bash
+yarn test
+```
+
+Strict CI-style validation:
+
+```bash
+yarn test:ci
+```
+
+---
+
+## 📦 Packaging & Release
+
+Create a production-ready ZIP:
+
+```bash
 yarn zip
 ```
 
-# PostCSS Features Used
+The generated archive can be uploaded directly via **Ghost Admin → Design → Upload theme**.
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- [Color Mod](https://github.com/jonathantneal/postcss-color-mod-function)
+---
 
+## 🔁 Upstream (Casper)
 
-# SVG Icons
+Wraith is based on the official **Casper** theme by Ghost Foundation.
 
-Casper uses inline SVG icons, included via Handlebars partials. You can find all icons inside `/partials/icons`. To use an icon just include the name of the relevant file, eg. To include the SVG icon in `/partials/icons/rss.hbs` - use `{{> "icons/rss"}}`.
+Upstream repository:
+👉 https://github.com/TryGhost/Casper
 
-You can add your own SVG icons in the same manner.
+Only selected updates are manually merged to preserve stability and design consistency.
 
+---
 
-# Copyright & License
+## 📄 License
 
-Copyright (c) 2013-2025 Ghost Foundation - Released under the [MIT license](LICENSE).
+MIT License.
+
+Original work © Ghost Foundation  
+Modifications © Romain Chevrot
+
+---
+
+## 🤝 Contributing
+
+This theme is primarily maintained for personal use.
+
+Issues and pull requests are welcome if they align with the project goals and philosophy.
